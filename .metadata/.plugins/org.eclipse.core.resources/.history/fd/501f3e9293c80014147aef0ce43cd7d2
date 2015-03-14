@@ -1,0 +1,60 @@
+package edu.stevens.cs548.clinic.service.dto;
+
+import java.util.Date;
+
+import edu.stevens.cs548.clinic.domain.DrugTreatment;
+import edu.stevens.cs548.clinic.domain.RadiologyTreatment;
+import edu.stevens.cs548.clinic.service.dto.ObjectFactory;
+import edu.stevens.cs548.clinic.service.dto.PatientDto;
+import edu.stevens.cs548.clinic.service.dto.TreatmentDto;
+
+public class TreatmentDtoFactory {
+
+	ObjectFactory factory;
+
+	public TreatmentDtoFactory() {
+		factory = new ObjectFactory();
+	}
+
+	public TreatmentDto createDrugTreatmentDto(DrugTreatment t) {
+		DrugTreatmentType d = factory.createDrugTreatmentType();
+		d.setName(t.getDrug());
+		d.setDosage(t.getDosage());
+		TreatmentDto dto = factory.createTreatmentDto();
+		dto.setDiagnosis(t.getDiagnosis());
+		dto.setId(t.getId());
+		dto.setPatient(t.getPatient().getId());
+		dto.setProvider(t.getProvider().getNpi());
+		dto.setDrugTreatment(d);
+		return dto;
+	}
+
+	public TreatmentDto createRadiologyDto(RadiologyTreatment t) {
+		RadiologyType r = factory.createRadiologyType();
+		for (Date e : t.getDate())
+		{
+		r.getDate().add(e);
+		}
+		TreatmentDto dto = factory.createTreatmentDto();
+		dto.setDiagnosis(t.getDiagnosis());
+		dto.setId(t.getId());
+		dto.setPatient(t.getPatient().getId());
+		dto.setProvider(t.getProvider().getNpi());
+		dto.setDrugTreatment(r);
+		return dto;
+	}
+
+	public TreatmentDto createSurgeryDto(DrugTreatment t) {
+		DrugTreatmentType d = factory.createDrugTreatmentType();
+		d.setName(t.getDrug());
+		d.setDosage(t.getDosage());
+		TreatmentDto dto = factory.createTreatmentDto();
+		dto.setDiagnosis(t.getDiagnosis());
+		dto.setId(t.getId());
+		dto.setPatient(t.getPatient().getId());
+		dto.setProvider(t.getProvider().getNpi());
+		dto.setDrugTreatment(d);
+		return dto;
+	}
+
+}

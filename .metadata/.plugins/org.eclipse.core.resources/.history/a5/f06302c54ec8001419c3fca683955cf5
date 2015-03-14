@@ -1,0 +1,41 @@
+package edu.stevens.cs548.clinic.service.web.soap;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+import edu.stevens.cs548.clinic.domain.IPatientDAO.PatientExn;
+import edu.stevens.cs548.clinic.domain.IProviderDAO.ProviderExn;
+import edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn;
+import edu.stevens.cs548.clinic.service.dto.*;
+import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
+import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderNotFoundExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.TreatmentNotFoundExn;
+
+@WebService(name = "IProviderWebPort", targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/provider")
+/*
+ * Endpoint interface for the patient Web service.
+ */
+public interface IProviderWebService {
+
+	@WebMethod(operationName = "addProvider")
+	public void addProvider(ProviderDto dto) throws ProviderServiceExn;
+
+	@WebMethod(operationName = "getProvider")
+	public ProviderDto getProvider(long id) throws ProviderExn,
+			ProviderServiceExn;
+
+	@WebMethod(operationName = "getProviderByNpi")
+	public ProviderDto getProvidersByNpi(long npi) throws ProviderServiceExn;
+
+	@WebMethod(operationName = "providerAddTreatment")
+	public void addTreatment(long patientId, long providerNPI,
+			TreatmentDto TreatmentDto) throws ProviderServiceExn, PatientServiceExn;
+
+	@WebMethod
+	public String siteInfo();
+
+}

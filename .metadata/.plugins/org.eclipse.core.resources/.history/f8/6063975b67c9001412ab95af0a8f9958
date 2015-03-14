@@ -1,0 +1,93 @@
+package edu.stevens.cs548.clinic.domain;
+
+import java.util.logging.Logger;
+
+import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.*;
+
+public class PatientDAO implements IPatientDAO {
+
+	private EntityManager em;
+	private TreatmentDAO treatmentDAO;
+
+	public PatientDAO(EntityManager em) {
+		this.em = em;
+		this.treatmentDAO = new TreatmentDAO(em);
+	}
+
+	private Logger logger = Logger.getLogger(PatientDAO.class
+			.getCanonicalName());
+
+	@Override
+	public long addPatient(Patient patient) throws PatientExn {
+		long pid = patient.getPatientId();
+		Query query = em.createNamedQuery("CountPatientByPatientID")
+				.setParameter("pid", pid);
+		Long numExisting = (Long) query.getSingleResult();
+		if (numExisting < 1) {
+			// add to database (and sync with database to generate primary key)
+			// Don't forget to initialize the patient aggregate with a treatment
+			// DAO
+
+			// if (patient.getAge() !=
+			// Patient.computeAge(patient.getBirthDate()))
+			// throw new PatientExn("Age and birthday do not match. \n");
+			// else {
+			em.persist(patient);
+			patient.setTreatmentDAO(this.treatmentDAO);
+			em.flush(); // DungVH
+			return pid;
+			// }
+			// throw new IllegalStateException("Unimplemented");
+
+		} else {
+			//logger.info("");
+			throw new PatientExn("Insertion: Patient with patient id (" + pid
+					+ ") already exists.");
+		}
+
+	}
+
+	@Override
+	public Patient getPatient(long id) throws PatientExn {
+		// retrieve patient using primary key
+		Patient pat = em.find(Patient.class, id);
+		if (pat == null) {
+			throw new PatientExn("Patient not found : primary key =" + id);
+		} else {
+			//pat.setAge(Patient.computeAge(pat.getBirthDate()));
+			pat.setTreatmentDAO(this.treatmentDAO);
+			return pat;
+		}
+	}
+
+	@Override
+	public Patient getPatientByPatientId(long pid) throws PatientExn {
+		// retrieve patient using query on patient id (secondary key)
+		TypedQuery<Patient> query = em.createNamedQuery(
+				"SearchPatientByPatientID", Patient.class).setParameter("pid",
+				pid);
+		List<Patient> patients = query.getResultList();
+		if (patients.size() > 1)
+			throw new PatientExn("Duplicate patient records : patient id = "
+					+ pid);
+		else if (patients.size() < 1)
+			throw new PatientExn("Patient not found : patient id " + pid);
+		else {
+			Patient pat = patients.get(0);
+			//pat.setAge(Patient.computeAge(pat.getBirthDate()));
+			pat.setTreatmentDAO(this.treatmentDAO);
+			return pat;
+		}
+	}
+
+	@Override
+	public void deletePatients() {
+		// Query update = em.createQuery("RemoveAllPatients");
+		// update.executeUpdate();
+		em.createQuery("delete from Patient").executeUpdate();
+	}
+
+}

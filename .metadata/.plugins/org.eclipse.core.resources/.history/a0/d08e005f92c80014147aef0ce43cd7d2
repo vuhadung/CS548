@@ -1,0 +1,29 @@
+package edu.stevens.cs548.clinic.service.dto;
+
+import edu.stevens.cs548.clinic.domain.DrugTreatment;
+import edu.stevens.cs548.clinic.service.dto.ObjectFactory;
+import edu.stevens.cs548.clinic.service.dto.PatientDto;
+import edu.stevens.cs548.clinic.service.dto.TreatmentDto;
+
+public class TreatmentDtoFactory {
+	
+	ObjectFactory factory;
+	
+	public TreatmentDtoFactory() {
+		factory = new ObjectFactory();
+	}
+	
+	public TreatmentDto createDrugTreatmentDto (DrugTreatment t) {
+		DrugTreatmentType drugtrmt = factory.createDrugTreatmentType();
+		
+		TreatmentDto d = factory.createTreatmentDto(null);
+	}
+	
+	
+	}
+	
+	/*
+	 * TODO: Repeat for other treatments.
+	 */
+
+}

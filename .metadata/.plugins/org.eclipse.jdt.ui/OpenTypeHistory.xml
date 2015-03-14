@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{Treatment.java[Treatment" modifiers="1025" timestamp="1426076755667"/>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{Provider.java[Provider" modifiers="1" timestamp="1426255533082"/>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{RadiologyTreatment.java[RadiologyTreatment" modifiers="1" timestamp="1426076937242"/>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{SurgeryTreatment.java[SurgeryTreatment" modifiers="1" timestamp="1426076955097"/>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{IProviderFactory.java[IProviderFactory" modifiers="513" timestamp="1424915406820"/>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{ITreatmentExporter.java[ITreatmentExporter" modifiers="513" timestamp="1426062732935"/>
+<typeInfo handle="=ClinicServiceClient/ejbModule&lt;edu.stevens.cs548.clinic.service.ejb{IProviderServiceLocal.java[IProviderServiceLocal" modifiers="513" timestamp="1426067354305"/>
+<typeInfo handle="=ClinicServiceClient/ejbModule&lt;edu.stevens.cs548.clinic.service.ejb{IProviderServiceRemote.java[IProviderServiceRemote" modifiers="513" timestamp="1426067398576"/>
+<typeInfo handle="=ClinicDomain/src&lt;edu.stevens.cs548.clinic.domain{IProviderDAO.java[IProviderDAO" modifiers="513" timestamp="1424922709019"/>
+<typeInfo handle="=ClinicServiceClient/ejbModule&lt;edu.stevens.cs548.clinic.service.ejb{IProviderService.java[IProviderService" modifiers="513" timestamp="1426255532964"/>
+</typeInfoHistroy>

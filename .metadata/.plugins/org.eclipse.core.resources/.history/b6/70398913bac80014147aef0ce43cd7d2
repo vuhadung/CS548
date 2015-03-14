@@ -1,0 +1,33 @@
+package edu.stevens.cs548.clinic.service.dto.util;
+
+import edu.stevens.cs548.clinic.domain.DrugTreatment;
+import edu.stevens.cs548.clinic.service.dto.ObjectFactory;
+import edu.stevens.cs548.clinic.service.dto.PatientDto;
+import edu.stevens.cs548.clinic.service.dto.TreatmentDto;
+
+public class TreatmentDtoFactory {
+	
+	ObjectFactory factory;
+	
+	public TreatmentDtoFactory() {
+		factory = new ObjectFactory();
+	}
+	
+	public TreatmentDto createTreatmentDto () {
+		return factory.createTreatmentDto();
+	}
+	
+	public TreatmentDto createDrugTreatmentDto (DrugTreatment t) {
+		TreatmentDto d = factory.createTreatmentDto();
+		d.setId(t.getId());
+		d.setPatient(t.getPatient().getId());
+		d.setProvider(t.getProvider().getNpi();
+		
+		
+		
+		return null;
+	}
+	
+	
+
+}

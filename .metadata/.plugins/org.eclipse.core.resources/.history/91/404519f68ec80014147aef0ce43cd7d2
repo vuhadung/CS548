@@ -1,0 +1,32 @@
+package edu.stevens.cs548.clinic.service.dto;
+
+import java.util.*;
+
+import edu.stevens.cs548.clinic.domain.Provider;
+
+public class ProviderDtoFactory
+{
+	ObjectFactory objFactory;
+	
+	public ProviderDtoFactory()
+	{
+		objFactory = new ObjectFactory();
+	}
+	
+	public ProviderDto createProviderDto(Provider p)
+	{
+		ProviderDto provDto = objFactory.createProviderDto();
+		
+		provDto.setProviderId(p.getId());
+		provDto.setNpi(p.getNpi());
+		provDto.setName(p.getName());
+		provDto.setProviderType(p.getProviderType());
+		List<Long> trmtIds = provDto.getTreatments();
+		for (Long tid : p.getTreatmentIds())
+		{
+			trmtIds.add(tid);
+		}
+		
+		return provDto;
+	}
+}

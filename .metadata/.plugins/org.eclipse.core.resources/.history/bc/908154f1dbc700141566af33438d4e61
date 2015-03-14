@@ -1,0 +1,72 @@
+package edu.stevens.cs548.clinic.service.web.soap;
+
+import java.util.List;
+
+import edu.stevens.cs548.clinic.domain.IPatientDAO.PatientExn;
+import edu.stevens.cs548.clinic.domain.IProviderDAO.ProviderExn;
+import edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn;
+import edu.stevens.cs548.clinic.service.dto.PatientDto;
+import edu.stevens.cs548.clinic.service.dto.TreatmentDto;
+import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderNotFoundExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.TreatmentNotFoundExn;
+
+public class ProviderWebService implements IProviderWebService {
+
+	@Override
+	public void addProvider(String name, long npi) throws ProviderServiceExn {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ProviderDto getProviderByName(String name) throws ProviderExn,
+			ProviderServiceExn {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ProviderDto getProvidersByNpi(long npi) throws ProviderServiceExn {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addTreatment(long patientId, long providerNPI,
+			TreatmentDto TreatmentDto) throws ProviderServiceExn {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteTreatment(long id, long tid, long npi)
+			throws PatientNotFoundExn, ProviderNotFoundExn, ProviderServiceExn,
+			TreatmentNotFoundExn {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public TreatmentDto[] getTreatmentsByProviderNpi(long npi)
+			throws ProviderNotFoundExn, TreatmentNotFoundExn,
+			ProviderServiceExn {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Long> getTreatmentsforPatient(long npi, PatientDto patient)
+			throws ProviderExn, TreatmentExn, PatientExn {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String siteInfo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

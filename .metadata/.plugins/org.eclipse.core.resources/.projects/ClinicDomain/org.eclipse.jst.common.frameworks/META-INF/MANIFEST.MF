@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Class-Path: eclipselink.jar javax.persistence_2.1.0.v201304241213.jar 
+ org.eclipse.persistence.jpa.modelgen_2.5.2.v20140319-9ad6abd.jar org.
+ eclipse.persistence.jpars_2.5.2.v20140319-9ad6abd.jar com.sun.tools.x
+ jc_2.2.0.jar com.sun.xml.bind_2.2.0.v201004141950.jar javax.activatio
+ n_1.1.0.v201108011116.jar javax.mail_1.4.0.v201005080615.jar javax.xm
+ l.bind_2.2.0.v201105210648.jar javax.xml.stream_1.0.1.v201004272200.j
+ ar
+

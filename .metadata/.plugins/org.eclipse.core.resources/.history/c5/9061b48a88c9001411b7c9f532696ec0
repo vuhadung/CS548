@@ -1,0 +1,141 @@
+package edu.stevens.cs548.clinic.domain;
+
+import java.io.Serializable;
+import java.util.*;
+
+import javax.persistence.*;
+
+import edu.stevens.cs548.clinic.domain.IPatientDAO.PatientExn;
+import edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn;
+
+import org.eclipse.persistence.annotations.PrivateOwned;
+
+import static javax.persistence.CascadeType.REMOVE;
+
+/**
+ * Entity implementation class for Entity: Patient
+ *
+ */
+@Entity
+@NamedQueries({
+		@NamedQuery(name = "SearchPatientByPatientID", query = "select p from Patient p where p.patientId = :pid"),
+		@NamedQuery(name = "CountPatientByPatientID", query = "select count(p) from Patient p where p.patientId = :pid") })
+// Error: @NamedQuery(name = "RemoveAllPatients", query =
+// "delete from Patient p")
+@Table(name = "PATIENT")
+public class Patient implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
+	private long patientId;
+
+	private String name;
+
+	@Temporal(TemporalType.DATE)
+	private Date birthDate;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(long patientId) {
+		this.patientId = patientId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	// JPA annotations (propagate deletion of patient to treatments)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "patient", orphanRemoval = true)
+	@PrivateOwned
+	private List<Treatment> treatments;
+
+	protected List<Treatment> getTreatments() {
+		return treatments;
+	}
+
+	protected void setTreatments(List<Treatment> treatments) {
+		this.treatments = treatments;
+	}
+
+	@Transient
+	private ITreatmentDAO treatmentDAO;
+
+	public void setTreatmentDAO(ITreatmentDAO tdao) {
+		this.treatmentDAO = tdao;
+	}
+
+	public long addTreatment(Treatment t) {
+		// persist treatment and set forward and backward links
+		if (t.getPatient() != this)
+			// throw new IllegalStateException("Unimplemented.");
+			t.setPatient(this);
+
+		if (!this.getTreatments().contains(t))
+			this.getTreatments().add(t);
+		return this.treatmentDAO.addTreatment(t);
+
+	}
+
+	public List<Long> getTreatmentIds() {
+		List<Long> treatmentIds = new ArrayList<Long>();
+		for (Treatment t : this.getTreatments()) {
+			treatmentIds.add(t.getId());
+		}
+		return treatmentIds;
+	}
+
+	public <T> T exportTreatment(long tid, ITreatmentExporter<T> visitor)
+			throws TreatmentExn {
+		// export a treatment without violated Aggregate pattern
+		// Check that the exported treatment is a treatment for this patient.
+		Treatment t = this.treatmentDAO.getTreatment(tid);
+		if (t.getPatient() != this) {
+			throw new TreatmentExn("Inappropriate treatment access : patient"
+					+ this.patientId + " treatment = " + tid);
+		} else
+			return t.export(visitor);
+	}
+
+	// DungVH
+	@SuppressWarnings("rawtypes")
+	public <T> List<T> exportTreatments(ITreatmentExporter<T> visitor)
+			throws TreatmentExn {
+		List<T> allTreatments = new ArrayList<T>();
+		for (Treatment t : this.getTreatments()) {
+			allTreatments.add(t.export(visitor));
+		}
+		return allTreatments;
+	}
+
+	public Patient() {
+		super();
+		treatments = new ArrayList<Treatment>();
+	}
+
+}
