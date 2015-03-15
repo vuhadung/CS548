@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="0/org.eclipse.jst.ws.wsImpl.java">
-		<item value="edu.stevens.cs548.clinic.service.web.soap.IPatientWebService"/>
+		<item value="edu.stevens.cs548.clinic.service.web.soap.ProviderWebService"/>
 		<item value="edu.stevens.cs548.clinic.service.web.soap.PatientWebService"/>
+		<item value="edu.stevens.cs548.clinic.service.web.soap.IPatientWebService"/>
 	</list>
 </section>

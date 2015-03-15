@@ -1,6 +1,7 @@
 package edu.stevens.cs548.clinic.service.web.soap;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
@@ -12,12 +13,21 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn
 import edu.stevens.cs548.clinic.service.ejb.IPatientServiceLocal;
 import edu.stevens.cs548.clinic.service.web.soap.*;
 
-@WebService(endpointInterface
-		="edu.stevens.cs548.clinic.service.web.soap.IPatientWebService")
+//Web Service
+@WebService(
+		endpointInterface="edu.stevens.cs548.clinic.service.web.soap.IPatientWebService",
+		targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/patient", 
+		serviceName = "PatientWebService", portName = "PatientWebPort")
+
+@SOAPBinding(
+		style = SOAPBinding.Style.DOCUMENT,
+		use = SOAPBinding.Use.LITERAL,
+		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+
 
 public class PatientWebService implements IPatientWebService {
 
-	@EJB(beanName = "PatientServiceBean")
+	@EJB(name = "ejb/patientServiceBean")
 	IPatientServiceLocal service;
 
 	@Override

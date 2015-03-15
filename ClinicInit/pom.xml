@@ -51,7 +51,11 @@
 			<groupId>edu.stevens.cs548</groupId>
 			<artifactId>ClinicService</artifactId>
 			<type>ejb</type>
-			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>edu.stevens.cs548</groupId>
+			<artifactId>ClinicSoapWebService</artifactId>
+			<type>war</type>
 		</dependency>
 	</dependencies>
 </project>

@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<servers/>
+<servers>
+  <server hostname="localhost" id="GlassFish 4 at localhost" name="GlassFish 4 at localhost" runtime-id="GlassFish 4" server-type="org.glassfish.jst.server.glassfish4" server-type-id="org.glassfish.jst.server.glassfish4" start-timeout="240" stop-timeout="240" timestamp="1">
+    <list key="modules" value0="ClinicApp::org.eclipse.jst.jee.server:ClinicApp::jst.ear::7.0"/>
+  </server>
+</servers>

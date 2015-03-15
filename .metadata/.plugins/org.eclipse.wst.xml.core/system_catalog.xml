@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <public publicId="-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.jst.jsf.facelet.core_1.3.0.v201405282043.jar!/dtd/facelet-taglib_1_0.dtd" webURL="facelet-taglib_1_0.dtd"/>
-  <system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/maven-v4_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/maven-v4_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/settings-v1_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/profiles-v1_0_0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/archetype-1.0.0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/archetype-catalog-1.0.0.xsd"/>
-  <system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.0.20140606-0033.jar!/xsd/archetype-descriptor-1.0.0.xsd"/>
   <public publicId="-//WAPFORUM//DTD WML 1.1//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171715.jar!/dtds/wml11.dtd"/>
   <public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171715.jar!/dtds/xhtml1-strict.dtd" webURL="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
   <public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171715.jar!/dtds/xhtml1-transitional.dtd" webURL="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
@@ -239,4 +232,11 @@
   <public publicId="-//GlassFish.org//DTD GlassFish Application Server 3.1 EJB 3.1//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/oracle.eclipse.tools.glassfish_7.3.4.201502282121.jar!/dtds/glassfish-ejb-jar_3_1-1.dtd" webURL="http://glassfish.org/dtds/glassfish-ejb-jar_3_1-1.dtd"/>
   <public publicId="-//GlassFish.org//DTD GlassFish Application Server 3.1 Java EE Application 6.0//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/oracle.eclipse.tools.glassfish_7.3.4.201502282121.jar!/dtds/glassfish-application_6_0-1.dtd" webURL="http://glassfish.org/dtds/glassfish-application_6_0-1.dtd"/>
   <public publicId="-//GlassFish.org//DTD GlassFish Application Server 3.1 Java EE Application Client 6.0//EN" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/oracle.eclipse.tools.glassfish_7.3.4.201502282121.jar!/dtds/glassfish-application-client_6_0-1.dtd" webURL="http://glassfish.org/dtds/glassfish-application-client_6_0-1.dtd"/>
+  <system systemId="http://maven.apache.org/maven-v4_0_0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/maven-v4_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/maven-v4_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/settings-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/settings-v1_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/profiles-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/profiles-v1_0_0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/archetype-1.0.0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-catalog-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/archetype-catalog-1.0.0.xsd"/>
+  <system systemId="http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.m2e.model.edit_1.5.1.20150109-1820.jar!/xsd/archetype-descriptor-1.0.0.xsd"/>
 </catalog>

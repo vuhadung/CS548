@@ -21,6 +21,13 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
 					<earSourceDirectory>EarContent</earSourceDirectory>
@@ -30,8 +37,17 @@
 					<modules>
 						<ejbModule>
 							<groupId>edu.stevens.cs548</groupId>
+							<artifactId>ClinicService</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>edu.stevens.cs548</groupId>
 							<artifactId>ClinicInit</artifactId>
 						</ejbModule>
+						<webModule>
+							<groupId>edu.stevens.cs548</groupId>
+							<artifactId>ClinicSoapWebService</artifactId>
+							<contextRoot>/ClinicSoapWebService</contextRoot>
+						</webModule>
 					</modules>
 					<generateApplicationXml>true</generateApplicationXml>
 					<packagingIncludes>META-INF/**,**/Clinic*.jar,**/Clinic*.war</packagingIncludes>
@@ -66,8 +82,20 @@
 		</dependency>
 		<dependency>
 			<groupId>edu.stevens.cs548</groupId>
+			<artifactId>ClinicService</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>edu.stevens.cs548</groupId>
 			<artifactId>ClinicSoapWebService</artifactId>
 			<type>war</type>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>2.13</version>
+		</dependency>
+		
 	</dependencies>
 </project>

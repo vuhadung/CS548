@@ -10,6 +10,7 @@
 		</list>
 		<list key="artifactId">
 			<item value="ClinicSoapWebService"/>
+			<item value="ClinicRoot"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -72,6 +73,7 @@
 	</section>
 	<section name="MavenModuleWizardParentPage">
 		<list key="moduleName">
+			<item value="ClinicSoapWebService"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -79,6 +81,20 @@
 			<item value="[artifactId]-[version]"/>
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="ClinicSoapWebService"/>
+			<item value="edu.stevens.cs548"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="ClinicSoapWebService"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 	<section name="MavenProjectWizardLocationPage">
@@ -94,12 +110,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="org.ClinicSoapWebService"/>
 			<item value="edu.stevens.cs548"/>
 		</list>
 		<list key="groupId">
 			<item value="edu.stevens.cs548"/>
 		</list>
 		<list key="artifactId">
+			<item value="ClinicSoapWebService"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

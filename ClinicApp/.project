@@ -3,6 +3,8 @@
 	<name>ClinicApp</name>
 	<comment></comment>
 	<projects>
+		<project>ClinicSoapWebService</project>
+		<project>testehu</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

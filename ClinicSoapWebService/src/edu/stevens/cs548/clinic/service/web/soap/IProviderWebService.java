@@ -17,14 +17,10 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
 import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderNotFoundExn;
 import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
 
+//Service Endpoint Interface (SEI)
 @WebService(
-targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/provider", 
-serviceName = "ProviderWebService", portName = "ProviderWebPort")
-
-@SOAPBinding(
-style = SOAPBinding.Style.DOCUMENT,
-use = SOAPBinding.Use.LITERAL,
-parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+		name="IProviderWebservice",
+		targetNamespace="http://cs548.stevens.edu/clinic/service/web/soap/provider")
 
 
 public interface IProviderWebService {

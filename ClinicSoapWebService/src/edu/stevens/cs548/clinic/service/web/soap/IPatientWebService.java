@@ -13,14 +13,10 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn;
 
+//Service Endpoint Interface (SEI)
 @WebService(
-		targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/patient", 
-		serviceName = "PatientWebService", portName = "PatientWebPort")
-
-@SOAPBinding(
-		style = SOAPBinding.Style.DOCUMENT,
-		use = SOAPBinding.Use.LITERAL,
-		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+		name="IPatientWebservice",
+		targetNamespace="http://cs548.stevens.edu/clinic/service/web/soap/patient")
 
 public interface IPatientWebService {
 

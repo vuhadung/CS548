@@ -18,7 +18,6 @@
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.PatientFactory"/>
 <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
-<fullyQualifiedTypeName name="javax.ejb.Stateless"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.IProviderFactory"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.util.ProviderDtoFactory"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn"/>
@@ -49,4 +48,5 @@
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.Treatment"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentNotFoundExn"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn"/>
+<fullyQualifiedTypeName name="javax.ejb.Stateless"/>
 </qualifiedTypeNameHistroy>
