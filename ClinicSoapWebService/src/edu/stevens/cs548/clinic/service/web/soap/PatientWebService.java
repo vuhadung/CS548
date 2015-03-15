@@ -19,12 +19,6 @@ import edu.stevens.cs548.clinic.service.web.soap.*;
 		targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/patient", 
 		serviceName = "PatientWebService", portName = "PatientWebPort")
 
-@SOAPBinding(
-		style = SOAPBinding.Style.DOCUMENT,
-		use = SOAPBinding.Use.LITERAL,
-		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
-
-
 public class PatientWebService implements IPatientWebService {
 
 	@EJB(name = "ejb/patientServiceBean")

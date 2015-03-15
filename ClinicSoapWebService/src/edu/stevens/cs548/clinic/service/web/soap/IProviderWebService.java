@@ -22,6 +22,11 @@ import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
 		name="IProviderWebservice",
 		targetNamespace="http://cs548.stevens.edu/clinic/service/web/soap/provider")
 
+@SOAPBinding(
+		style = SOAPBinding.Style.DOCUMENT,
+		use = SOAPBinding.Use.LITERAL,
+		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+
 
 public interface IProviderWebService {
 

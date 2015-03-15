@@ -18,6 +18,11 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn
 		name="IPatientWebservice",
 		targetNamespace="http://cs548.stevens.edu/clinic/service/web/soap/patient")
 
+@SOAPBinding(
+		style = SOAPBinding.Style.DOCUMENT,
+		use = SOAPBinding.Use.LITERAL,
+		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
+
 public interface IPatientWebService {
 
 	@WebMethod(operationName = "addPatient")
