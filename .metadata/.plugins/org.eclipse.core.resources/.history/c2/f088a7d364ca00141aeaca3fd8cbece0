@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ClinicApp-1.0.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="ClinicService-1.0.0.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicService/1.0.0/ClinicService-1.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ClinicInit-1.0.0.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicInit/1.0.0/ClinicInit-1.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ClinicSoapWebService-1.0.0.war" deploy-path="/" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicSoapWebService/1.0.0/ClinicSoapWebService-1.0.0.war">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ClinicDomain-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicDomain/1.0.0/ClinicDomain-1.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ClinicDTOs-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicDTOs/1.0.0/ClinicDTOs-1.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="ClinicServiceClient-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicServiceClient/1.0.0/ClinicServiceClient-1.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="component.inclusion.patterns" value="META-INF/**,**/Clinic*.jar,**/Clinic*.war"/>
+        <property name="component.exclusion.patterns"/>
+    </wb-module>
+</project-modules>
