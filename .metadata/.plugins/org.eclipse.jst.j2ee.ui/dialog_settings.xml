@@ -9,4 +9,7 @@
 	<list key="MRU_RUNTIME_STORE">
 		<item value="GlassFish 4"/>
 	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\Users\VU HA DUNG\Documents\CS548\ClinicSoapWebService.war"/>
+	</list>
 </section>

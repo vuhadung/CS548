@@ -16,14 +16,14 @@
   <facet id="jst.jsf">
     <node name="libprov">
       <node name="last-provider-used">
-        <attribute name="2.2" value="GlassFish-4-SystemLibrary-JSF"/>
+        <attribute name="2.2" value="jsf-no-op-library-provider"/>
       </node>
     </node>
   </facet>
   <facet id="jst.jaxrs">
     <node name="libprov">
       <node name="last-provider-used">
-        <attribute name="1.1" value="oracle.eclipse.tools.glassfish.jaxrsLibraryproviderID"/>
+        <attribute name="1.1" value="jaxrs-no-op-library-provider"/>
       </node>
     </node>
   </facet>

@@ -19,11 +19,16 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientServiceLocal;
 import edu.stevens.cs548.clinic.service.ejb.IProviderServiceLocal;
 import edu.stevens.cs548.clinic.service.web.soap.*;
 
-//Web Service
+//Web Service Implementation
 @WebService(
 		endpointInterface="edu.stevens.cs548.clinic.service.web.soap.IProviderWebService",
 targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/provider", 
 serviceName = "ProviderWebService", portName = "ProviderWebPort")
+
+@SOAPBinding(
+		style = SOAPBinding.Style.DOCUMENT,
+		use = SOAPBinding.Use.LITERAL,
+		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
 
 public class ProviderWebService implements IProviderWebService {
 

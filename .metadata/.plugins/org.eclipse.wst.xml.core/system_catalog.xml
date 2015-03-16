@@ -26,8 +26,8 @@
   <uri name="http://www.w3.org/TR/html4/strict.dtd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171715.jar!/dtds/strict.dtd"/>
   <uri name="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171715.jar!/xsd/ws-securitypolicy-1.2.xsd"/>
   <uri name="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200802" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171715.jar!/xsd/ws-securitypolicy.xsd"/>
-  <system systemId="http://www.w3.org/2001/xml.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.xsd_2.10.0.v20140901-1055.jar!/cache/www.w3.org/2001/xml.xsd"/>
-  <uri name="http://www.w3.org/2001/XMLSchema" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.xsd_2.10.0.v20140901-1055.jar!/cache/www.w3.org/2001/XMLSchema.xsd"/>
+  <system systemId="http://www.w3.org/2001/xml.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.xsd_2.10.0.v20150123-0452.jar!/cache/www.w3.org/2001/xml.xsd"/>
+  <uri name="http://www.w3.org/2001/XMLSchema" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.xsd_2.10.0.v20150123-0452.jar!/cache/www.w3.org/2001/XMLSchema.xsd"/>
   <uri name="http://www.eclipse.org/eclipselink/xsds/eclipselink_orm_1_0.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.jpt.common.eclipselink.core_1.3.100.v201310142259.jar!/schemas/eclipselink_orm_1_0.xsd"/>
   <uri name="http://www.eclipse.org/eclipselink/xsds/eclipselink_orm_1_1.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.jpt.common.eclipselink.core_1.3.100.v201310142259.jar!/schemas/eclipselink_orm_1_1.xsd"/>
   <uri name="http://www.eclipse.org/eclipselink/xsds/eclipselink_orm_1_2.xsd" uri="jar:file:/C:/Users/VU HA DUNG/Documents/eclipse/plugins/org.eclipse.jpt.common.eclipselink.core_1.3.100.v201310142259.jar!/schemas/eclipselink_orm_1_2.xsd"/>

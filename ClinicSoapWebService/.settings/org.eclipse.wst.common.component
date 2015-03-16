@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="ClinicSoapWebService">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <dependent-module archiveName="ClinicDTOs-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ClinicDTOs/ClinicDTOs">
             <dependency-type>uses</dependency-type>
         </dependent-module>
@@ -11,6 +11,6 @@
         </dependent-module>
         <property name="context-root" value="ClinicSoapWebService"/>
         <property name="java-output-path" value="/ClinicSoapWebService/build/classes"/>
-        <property name="component.inclusion.patterns" value="META-INF/**,**/Clinic*.jar,**/Clinic*.war"/>
+        <property name="component.inclusion.patterns" value="META-INF/**,WEB-INF/**"/>
     </wb-module>
 </project-modules>

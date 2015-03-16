@@ -18,6 +18,13 @@
 		<item value="375" key="AvailableNameColumnWidth"/>
 		<item value="false" key="FilterOnEnv"/>
 	</section>
+	<section name="org.eclipse.m2e.internal.discovery.wizards.MavenDiscoveryInstallWizard.WizardSettings">
+		<item value="874" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="498" key="DIALOG_HEIGHT"/>
+		<item value="-180" key="DIALOG_X_ORIGIN"/>
+		<item value="19" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.ResolutionResultsPage">
 		<item value="200" key="DetailsSashWeight"/>
 		<item value="400" key="NameColumnWidth"/>

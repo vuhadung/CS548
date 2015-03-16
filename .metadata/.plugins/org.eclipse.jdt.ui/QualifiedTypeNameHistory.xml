@@ -33,7 +33,6 @@
 <fullyQualifiedTypeName name="javax.ejb.EJB"/>
 <fullyQualifiedTypeName name="javax.enterprise.inject.Default"/>
 <fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.ProviderDto"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.Provider"/>
@@ -49,4 +48,5 @@
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentNotFoundExn"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn"/>
 <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain"/>
 </qualifiedTypeNameHistroy>

@@ -16,13 +16,22 @@
 
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>${basedir}\src</sourceDirectory>
+		<outputDirectory>${basedir}\WebContent\WEB-INF\classes</outputDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
+					<archiveClasses>true</archiveClasses>
+					<attachClasses>true</attachClasses>
+					<webResources>
+						<resource>
+							<directory>${basedir}\WebContent</directory>
+						</resource>
+					</webResources>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<webappDirectory>${basedir}\WebContent</webappDirectory>
+					<packagingIncludes>META-INF/**,WEB-INF/**</packagingIncludes>
 				</configuration>
 			</plugin>
 			<plugin>

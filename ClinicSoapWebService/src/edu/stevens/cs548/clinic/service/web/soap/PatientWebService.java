@@ -13,7 +13,7 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn
 import edu.stevens.cs548.clinic.service.ejb.IPatientServiceLocal;
 import edu.stevens.cs548.clinic.service.web.soap.*;
 
-//Web Service
+//Web Service Implementation
 @WebService(
 		endpointInterface="edu.stevens.cs548.clinic.service.web.soap.IPatientWebService",
 		targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/patient", 

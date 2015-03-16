@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sun-web-app SYSTEM "http://www.sun.com/software/appserver/dtds/sun-web-app_2_5-0.dtd" PUBLIC "-//Sun Microsystems, Inc.//DTD Application Server 9.0 Servlet 2.5//EN">
+
+<sun-web-app error-url="">
+	<context-root>/ClinicSoapWebService</context-root>
+	<class-loader delegate="true" />
+	<jsp-config>
+		<property value="true" name="keepgenerated">
+			<description>Keep a copy of the generated servlet class java code.</description>
+		</property>
+	</jsp-config>
+	<endpoints>
+		<endpoint name="Patient Webservice"
+			implementation="edu.stevens.cs548.clinic.service.web.soap.PatientWebService"
+			url-pattern="/PatientWebService" />
+		<endpoint name="Provider Webservice"
+			implementation="edu.stevens.cs548.clinic.service.web.soap.ProviderWebService"
+			url-pattern="/ProviderWebService" />
+	</endpoints>
+
+</sun-web-app>
+

@@ -18,37 +18,22 @@ import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderNotFoundExn
 import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
 
 //Service Endpoint Interface (SEI)
-@WebService(
-		name="IProviderWebservice",
-		targetNamespace="http://cs548.stevens.edu/clinic/service/web/soap/provider")
-
-@SOAPBinding(
-		style = SOAPBinding.Style.DOCUMENT,
-		use = SOAPBinding.Use.LITERAL,
-		parameterStyle = SOAPBinding.ParameterStyle.WRAPPED)
-
-
+@WebService(name = "IProviderWebPort", targetNamespace = "http://cs548.stevens.edu/clinic/service/web/soap/provider")
 public interface IProviderWebService {
 
 	@WebMethod(operationName = "addProvider")
-	public long addProvider(
-			@WebParam(name = "provider-dto", targetNamespace = "http://cs548.stevens.edu/clinic/dto") ProviderDto dto)
-			throws ProviderServiceExn;
+	public long addProvider(ProviderDto dto) throws ProviderServiceExn;
 
 	@WebMethod(operationName = "getProvider")
-	@WebResult(name = "provider-dto", targetNamespace = "http://cs548.stevens.edu/clinic/dto")
 	public ProviderDto getProvider(long id) throws ProviderServiceExn;
 
 	@WebMethod(operationName = "getProviderByNpi")
-	@WebResult(name = "provider-dto", targetNamespace = "http://cs548.stevens.edu/clinic/dto")
 	public ProviderDto getProviderByNpi(long npi) throws ProviderServiceExn;
 
 	@WebMethod(operationName = "providerAddTreatment")
-	public void addTreatment(
-			long patientId,
-			long providerNPI,
-			@WebParam(name = "treatment-dto", targetNamespace = "http://cs548.stevens.edu/clinic/dto") TreatmentDto TreatmentDto)
-			throws ProviderServiceExn, PatientServiceExn;
+	public void addTreatment(long patientId, long providerNPI,
+			TreatmentDto TreatmentDto) throws ProviderServiceExn,
+			PatientServiceExn;
 
 	@WebMethod
 	public String siteInfo();
