@@ -33,7 +33,6 @@ import edu.stevens.cs548.clinic.domain.TreatmentFactory;
 import edu.stevens.cs548.clinic.service.dto.*;
 import edu.stevens.cs548.clinic.service.dto.util.*;
 import edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain;
-//import edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn;
@@ -59,10 +58,8 @@ public class InitBean {
 	@Inject @ClinicDomain
 	EntityManager em;
 
-	@EJB(beanName = "PatientServiceBean")
-	IPatientServiceLocal servicePatient;
-	@EJB(beanName = "ProviderServiceBean")
-	IProviderServiceLocal serviceProvider;
+	@Inject IPatientServiceLocal servicePatient;
+	@Inject IProviderServiceLocal serviceProvider;
 
 	@PostConstruct
 	private void init() {

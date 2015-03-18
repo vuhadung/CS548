@@ -2,6 +2,7 @@ package edu.stevens.cs548.clinic.service.web.soap;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
@@ -21,8 +22,8 @@ import edu.stevens.cs548.clinic.service.web.soap.*;
 
 public class PatientWebService implements IPatientWebService {
 
-	@EJB(name = "ejb/patientServiceBean")
-	IPatientServiceLocal service;
+	//@EJB(name = "ejb/patientServiceBean")
+	@Inject IPatientServiceLocal service;
 
 	@Override
 	public long addPatient(PatientDto dto) throws PatientServiceExn {

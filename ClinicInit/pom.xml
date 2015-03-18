@@ -57,5 +57,9 @@
 			<artifactId>ClinicSoapWebService</artifactId>
 			<type>war</type>
 		</dependency>
+		<dependency>
+			<groupId>edu.stevens.cs548</groupId>
+			<artifactId>ClinicServiceClient</artifactId>
+		</dependency>
 	</dependencies>
 </project>

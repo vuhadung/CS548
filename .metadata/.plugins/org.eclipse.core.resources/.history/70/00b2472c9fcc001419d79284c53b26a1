@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:patient-rep xmlns:tns="http://cs548.stevens.edu/clinic/service/web/rest/data" xmlns:tns1="http://cs548.stevens.edu/clinic/service/web/rest/data/dap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cs548.stevens.edu/clinic/service/web/rest/data ClinicData.xsd ">
+  <tns:id mediaType="" relation="http://tempuri.org" url="http://tempuri.org"/>
+  <tns:patient-id>0</tns:patient-id>
+  <tns:name>tns:name</tns:name>
+  <tns:dob>2001-01-01</tns:dob>
+  <tns:age>0</tns:age>
+  <tns:treatments mediaType="" relation="http://tempuri.org" url="http://tempuri.org"/>
+</tns:patient-rep>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
@@ -32,8 +33,8 @@ serviceName = "ProviderWebService", portName = "ProviderWebPort")
 
 public class ProviderWebService implements IProviderWebService {
 
-	@EJB(name = "ejb/providerServiceBean")
-	IProviderServiceLocal service;
+	//@EJB(name = "ejb/providerServiceBean")
+	@Inject IProviderServiceLocal service;
 
 	@Override
 	public long addProvider(ProviderDto dto) throws ProviderServiceExn {

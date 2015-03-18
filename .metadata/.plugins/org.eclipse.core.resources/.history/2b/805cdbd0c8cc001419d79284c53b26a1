@@ -1,0 +1,30 @@
+package edu.stevens.cs548.clinic.service.representations;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlRegistry;
+
+import edu.stevens.cs548.clinic.service.web.rest.data.ObjectFactory;
+import edu.stevens.cs548.clinic.service.web.rest.data.RadiologyType;
+import edu.stevens.cs548.clinic.service.web.rest.data.SurgeryType;
+
+public class SurgeryRepresentation extends SurgeryType {
+	
+	public RadiologyRepresentation() {
+	}
+
+	@Override
+	public List<Date> getDate() {
+        return super.getDate();
+    }
+
+	@XmlRegistry
+	class ObjectFactoryRadiology extends ObjectFactory {
+		@Override
+		public RadiologyType createRadiologyType() {
+			return new RadiologyRepresentation();
+		}
+	}
+	
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://cs548.stevens.edu/clinic/service/web/rest/data/dap"
+	elementFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://cs548.stevens.edu/clinic/service/web/rest/data/dap">
+
+	<!-- DungVH: The target namespace is corresponding to the package's name -->
+
+
+	<!-- DungVH: Generated this schema to *.java file in the following packeage -->
+	<xsd:annotation>
+		<xsd:appinfo>
+			<jaxb:schemaBindings>
+				<jaxb:package name="edu.steves.cs548.clinic.service.web.rest.data" />
+			</jaxb:schemaBindings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+
+	<complexType name="LinkType">
+		<attribute name="url" type="anyURI"></attribute>
+		<attribute name="relation" type="anyURI"></attribute>
+		<attribute name="mediaType" type="string"></attribute>
+	</complexType>
+
+</schema>

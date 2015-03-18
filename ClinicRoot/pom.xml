@@ -18,6 +18,8 @@
 		<module>../ClinicServiceClient</module>
 		<module>../ClinicService</module>
 		<module>../ClinicSoapWebService</module>
+		<module>../ClinicRepresentations</module>
+		<module>../ClinicRestWebService</module>
 	</modules>
 
 	<properties>
@@ -210,12 +212,22 @@
 				<version>1.0.0</version>
 				<type>war</type>
 			</dependency>
+
+			<!-- DungVH -->
 			<dependency>
 				<groupId>edu.stevens.cs548</groupId>
-				<artifactId>ClinicWebApp</artifactId>
+				<artifactId>ClinicRepresentations</artifactId>
 				<version>1.0.0</version>
-				<type>war</type>
 			</dependency>
+
+			<!-- This module is in need ?! -->
+			<!-- <dependency> -->
+			<!-- <groupId>edu.stevens.cs548</groupId> -->
+			<!-- <artifactId>ClinicWebApp</artifactId> -->
+			<!-- <version>1.0.0</version> -->
+			<!-- <type>war</type> -->
+			<!-- </dependency> -->
+
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>

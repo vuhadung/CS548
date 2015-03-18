@@ -47,6 +47,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\VU HA DUNG\Documents\CS548\ClinicRoot"/>
 			<item value="C:\Users\VU HA DUNG\Documents\CS548-A5"/>
 			<item value="C:\Users\VU HA DUNG\Documents\CS548-A5\ClinicRoot"/>
 			<item value="C:\Users\VU HA DUNG\Documents\CS548-A5\ClinicService"/>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO"/>
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="java.io.Console"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
@@ -15,14 +14,11 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.jws.WebService"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.dto.SurgeryType"/>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.PatientFactory"/>
 <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.IProviderFactory"/>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.util.ProviderDtoFactory"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn"/>
-<fullyQualifiedTypeName name="javax.inject.Inject"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.IPatientServiceLocal"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.IProviderServiceLocal"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.PatientDto"/>
@@ -32,9 +28,7 @@
 <fullyQualifiedTypeName name="javax.jws.WebResult"/>
 <fullyQualifiedTypeName name="javax.ejb.EJB"/>
 <fullyQualifiedTypeName name="javax.enterprise.inject.Default"/>
-<fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
 <fullyQualifiedTypeName name="javax.persistence.PersistenceContext"/>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.ProviderDto"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.Provider"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.DrugTreatmentType"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.RadiologyTreatment"/>
@@ -49,4 +43,21 @@
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn"/>
 <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.TreatmentFactory"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.web.rest.data.PatientType"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.web.rest.data.ProviderType"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.ProviderDto"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.web.rest.data.dap.LinkType"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.util.ProviderDtoFactory"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.PatientFactory"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.TreatmentDto"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRegistry"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.web.rest.data.ObjectFactory"/>
+<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
+<fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
+<fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.util.TreatmentDtoFactory"/>
+<fullyQualifiedTypeName name="javax.inject.Inject"/>
 </qualifiedTypeNameHistroy>

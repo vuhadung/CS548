@@ -4,6 +4,8 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ClinicRoot" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ClinicService" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ClinicServiceClient" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ClinicRepresentations" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ClinicRestWebService" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1424908033311_0" label="Window Working Set" name="Aggregate for window 1424908033310"/>
 </workingSetManager>

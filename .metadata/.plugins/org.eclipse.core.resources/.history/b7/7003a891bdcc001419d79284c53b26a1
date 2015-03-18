@@ -1,0 +1,63 @@
+package edu.stevens.cs548.clinic.service.representations;
+
+import java.util.*;
+
+import javax.xml.bind.annotation.*;
+import javax.ws.rs.core.*;
+
+import edu.stevens.cs548.clinic.service.web.rest.data.*;
+import edu.stevens.cs548.clinic.service.web.rest.data.dap.LinkType;
+import edu.stevens.cs548.clinic.service.dto.*;
+import edu.stevens.cs548.clinic.service.dto.util.*;
+
+@XmlRootElement
+public class ProviderRepresentation extends ProviderType {
+
+	public List<LinkType> getLinksTreatments() {
+		return this.getTreatments();
+	}
+
+	public static LinkType getProviderLink(long id, UriInfo uriInfo) {
+		UriBuilder ub = uriInfo.getBaseUriBuilder();
+		ub.path("provider").path("{id}");
+		String providerURI = ub.build(Long.toString(id)).toString();
+
+		LinkType link = new LinkType();
+		link.setUrl(providerURI);
+		link.setRelation(Representation.RELATION_PROVIDER);
+		link.setMediaType(Representation.MEDIA_TYPE);
+		return link;
+	}
+
+	private ProviderDtoFactory providerDtoFactory;
+
+	public ProviderRepresentation() {
+		super();
+		this.providerDtoFactory = new ProviderDtoFactory();
+	}
+
+	public ProviderRepresentation(ProviderDto dto, UriInfo uriInfo) {
+		this.id = getProviderLink(dto.getProviderId(), uriInfo);
+		this.providerId = dto.getNpi();
+		this.name = dto.getName();
+		if (dto.getProviderType() != null)
+			this.specialization = dto.getProviderType();
+
+		List<LinkType> links = this.getTreatments();
+		for (long t : dto.getTreatments()) {
+			links.add(TreatmentRepresentation.getTreatmentLink(t, uriInfo));
+		}
+	}
+
+	// DungVH
+	public ProviderDto getProviderDto() {
+		ProviderDto p = providerDtoFactory.createProviderDto();
+		p.setProviderId(Representation.getId(this.id));
+		p.setNpi(this.getProviderId());
+		p.setName(this.name);
+		if (this.getSpecialization() != null)
+			p.setProviderType(this.getSpecialization());
+		return p;
+	}
+
+}
