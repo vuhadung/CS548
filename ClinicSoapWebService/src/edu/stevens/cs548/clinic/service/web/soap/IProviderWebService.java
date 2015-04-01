@@ -34,7 +34,7 @@ public interface IProviderWebService {
 
 	@WebMethod(operationName = "providerAddTreatment")
 	public void addTreatment(long patientId, long providerNPI,
-			TreatmentDto TreatmentDto) throws ProviderServiceExn,
+			@WebParam(name="treatment-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto") TreatmentDto TreatmentDto) throws ProviderServiceExn,
 			PatientServiceExn;
 
 	@WebMethod

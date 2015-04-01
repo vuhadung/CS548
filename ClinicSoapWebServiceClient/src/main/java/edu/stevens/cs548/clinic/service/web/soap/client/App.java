@@ -248,7 +248,7 @@ public class App {
 		}
 	}
 
-	private String siteInfo(String[] args) {
+	private String patientSiteInfo(String[] args) {
 		if (args.length > 0) {
 			error("Usage: patient siteInfo");
 			return null;
@@ -276,7 +276,7 @@ public class App {
 				displayTreatment(getTreatment(args));
 				newline();
 			} else if ("siteInfo".equals(cmd)) {
-				println(siteInfo(args));
+				println(patientSiteInfo(args));
 			} else {
 				error("Unrecognized patient service command: " + cmd);
 			}
@@ -313,7 +313,7 @@ public class App {
 		}
 
 		try {
-			ProviderDto dto = factory.providerPatientDto();
+			ProviderDto dto = factory.createProviderDto();
 			// ProviderDto dto = new ProviderDto();
 			dto.setName(args[0]);
 			dto.setNpi(Long.parseLong(args[1]));
@@ -368,7 +368,7 @@ public class App {
 		dt.setDosage(Float.parseFloat(args[4]));
 		dto.setDrugTreatment(dt);
 		try {
-			provider.addTreatment(Long.parseLong(args[0]),
+			provider.providerAddTreatment(Long.parseLong(args[0]),
 					Long.parseLong(args[1]), dto);
 			logger.info("Adding a drug treatment successfully.");
 			println("Adding a drug treatment successfully.");
@@ -377,7 +377,7 @@ public class App {
 		}
 	}
 
-	private String siteInfo(String[] args) {
+	private String providerSiteInfo(String[] args) {
 		if (args.length > 0) {
 			error("Usage: provider siteInfo");
 			return null;
@@ -399,13 +399,13 @@ public class App {
 				displayProvider(getProvider(args));
 				newline();
 			} else if ("getPatientByNpi".equals(cmd)) {
-				displayProvider(getPatientByNpi(args));
+				displayProvider(getProviderByNpi(args));
 				newline();
 			} else if ("addDrugTreatment".equals(cmd)) {
 				addDrugTreatment(args);
 				newline();
 			} else if ("siteInfo".equals(cmd)) {
-				println(siteInfo(args));
+				println(providerSiteInfo(args));
 			} else {
 				error("Unrecognized provider service command: " + cmd);
 			}
