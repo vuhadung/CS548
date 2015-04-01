@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import javax.annotation.*;
 import javax.ejb.*;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -12,6 +13,7 @@ import edu.stevens.cs548.clinic.domain.IPatientDAO.PatientExn;
 import edu.stevens.cs548.clinic.domain.IProviderDAO.ProviderExn;
 import edu.stevens.cs548.clinic.service.dto.*;
 import edu.stevens.cs548.clinic.service.dto.util.*;
+import edu.stevens.cs548.clinic.service.ejb.ClinicDomain;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
 
@@ -37,6 +39,7 @@ public class ProviderService implements IProviderServiceLocal,
 	}
 
 	@PersistenceContext(unitName = "ClinicDomain")
+	//@Inject @ClinicDomain 
 	EntityManager em;
 
 	@PostConstruct
@@ -98,7 +101,7 @@ public class ProviderService implements IProviderServiceLocal,
 			ProviderNotFoundExn {
 		try {
 			Patient patient = patientDAO.getPatient(patientId);
-			Provider provider = providerDAO.getProviderByNPI(providerNPI);
+			Provider provider = providerDAO.getProvider(providerNPI);
 			provider.addSurgery(treatmentDto.getDiagnosis(), treatmentDto
 					.getSurgery().getDate(), patient);
 		} catch (PatientExn e) {
@@ -114,7 +117,7 @@ public class ProviderService implements IProviderServiceLocal,
 			ProviderNotFoundExn {
 		try {
 			Patient patient = patientDAO.getPatient(patientId);
-			Provider provider = providerDAO.getProviderByNPI(providerNPI);
+			Provider provider = providerDAO.getProvider(providerNPI);
 			provider.addRadiology(treatmentDto.getDiagnosis(), treatmentDto
 					.getRadiology().getDate(), patient);
 		} catch (PatientExn e) {
@@ -129,7 +132,7 @@ public class ProviderService implements IProviderServiceLocal,
 			ProviderNotFoundExn {
 		try {
 			Patient patient = patientDAO.getPatient(patientId);
-			Provider provider = providerDAO.getProviderByNPI(providerNPI);
+			Provider provider = providerDAO.getProvider(providerNPI);
 			provider.addDrugTreatment(treatmentDto.getDiagnosis(), treatmentDto
 					.getDrugTreatment().getName(), treatmentDto
 					.getDrugTreatment().getDosage(), patient);

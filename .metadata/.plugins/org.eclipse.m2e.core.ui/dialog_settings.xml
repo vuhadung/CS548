@@ -131,4 +131,10 @@
 			<item value="1.0.0"/>
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.editor.dialogs.ManageDependenciesDialog">
+		<item value="711" key="width"/>
+		<item value="328" key="x"/>
+		<item value="62" key="y"/>
+		<item value="450" key="height"/>
+	</section>
 </section>

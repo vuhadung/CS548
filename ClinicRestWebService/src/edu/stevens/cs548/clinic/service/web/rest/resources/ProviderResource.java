@@ -17,6 +17,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
@@ -56,8 +57,8 @@ public class ProviderResource {
 	@Inject IProviderServiceLocal providerService;
 
 	@GET
-	@Path("site")
-	@Produces("text/plain")
+	@Path("/site")
+	@Produces(MediaType.TEXT_PLAIN)
 	public String getSiteInfo() {
 		return providerService.siteInfo();
 	}
@@ -112,22 +113,22 @@ public class ProviderResource {
 	@Path("{pid}/treatments")
 	@Consumes("application/xml")
 	public Response addTreatment(@HeaderParam("X-Patient") String patientURI,
-			@PathParam("pid") String pid) {
+			@PathParam("pid") String pid, TreatmentRepresentation trmtRep) {
 		try {
 			/*
 			 * long patientId = Long.parseLong(patientURI.substring(patientURI
 			 * .lastIndexOf('/') + 1));
 			 */
-			long patientId;
-			long providerNPI = Long.parseLong(pid);
+			long patientKey;
+			long providerKey = Long.parseLong(pid);
 			String[] segments = patientURI.split("/");
 			if (segments != null && segments.length > 0) {
-				patientId = Long.parseLong(segments[segments.length - 1]);
-				// unclear
-				TreatmentDto treatmentDto = treatmentDtoFactory
-						.createTreatmentDto();
+				patientKey = Long.parseLong(segments[segments.length - 1]);
+				//DungVH
+				TreatmentDto treatmentDto = trmtRep.getTreatment();
+				//
 				try {
-					providerService.addTreatment(patientId, providerNPI,
+					providerService.addTreatment(patientKey, providerKey,
 							treatmentDto);
 				} catch (PatientServiceExn e) {
 					throw new WebApplicationException(400);

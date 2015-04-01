@@ -25,7 +25,21 @@
 		<item value="-180" key="DIALOG_X_ORIGIN"/>
 		<item value="19" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="org.eclipse.m2e.internal.discovery.wizards.MavenDiscoveryInstallWizard.SelectableIUsPage">
+		<item value="200" key="DetailsSashWeight"/>
+		<item value="300" key="NameColumnWidth"/>
+		<item value="100" key="VersionColumnWidth"/>
+		<item value="200" key="IDColumnWidth"/>
+		<item value="800" key="ListSashWeight"/>
+	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.InstallWizard.ResolutionResultsPage">
+		<item value="200" key="DetailsSashWeight"/>
+		<item value="400" key="NameColumnWidth"/>
+		<item value="200" key="VersionColumnWidth"/>
+		<item value="200" key="IDColumnWidth"/>
+		<item value="800" key="ListSashWeight"/>
+	</section>
+	<section name="org.eclipse.m2e.internal.discovery.wizards.MavenDiscoveryInstallWizard.ResolutionResultsPage">
 		<item value="200" key="DetailsSashWeight"/>
 		<item value="400" key="NameColumnWidth"/>
 		<item value="200" key="VersionColumnWidth"/>

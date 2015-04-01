@@ -20,6 +20,9 @@
 		<module>../ClinicSoapWebService</module>
 		<module>../ClinicRepresentations</module>
 		<module>../ClinicRestWebService</module>
+		
+		<!-- <module>../ClinicSoapWebServiceClient</module>  -->
+		
 	</modules>
 
 	<properties>

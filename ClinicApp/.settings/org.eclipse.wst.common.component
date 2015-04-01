@@ -17,10 +17,10 @@
         <dependent-module archiveName="ClinicDomain-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicDomain/1.0.0/ClinicDomain-1.0.0.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ClinicDTOs-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicDTOs/1.0.0/ClinicDTOs-1.0.0.jar">
+        <dependent-module archiveName="ClinicServiceClient-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicServiceClient/1.0.0/ClinicServiceClient-1.0.0.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="ClinicServiceClient-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicServiceClient/1.0.0/ClinicServiceClient-1.0.0.jar">
+        <dependent-module archiveName="ClinicDTOs-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicDTOs/1.0.0/ClinicDTOs-1.0.0.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="ClinicRepresentations-1.0.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/edu/stevens/cs548/ClinicRepresentations/1.0.0/ClinicRepresentations-1.0.0.jar">

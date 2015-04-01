@@ -118,5 +118,6 @@
 			<groupId>edu.stevens.cs548</groupId>
 			<artifactId>ClinicRepresentations</artifactId>
 		</dependency>
+
 	</dependencies>
 </project>

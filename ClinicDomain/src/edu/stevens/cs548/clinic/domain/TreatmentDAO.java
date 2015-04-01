@@ -29,10 +29,10 @@ public class TreatmentDAO implements ITreatmentDAO {
 
 	@Override
 	public void deleteTreatments() {
-		em.createQuery("delete from Treatment").executeUpdate();
-		em.createQuery("delete from DrugTreatment").executeUpdate();
-		em.createQuery("delete from RadiologyTreatment").executeUpdate();
-		em.createQuery("delete from SurgeryTreatment").executeUpdate();		
+		//em.createQuery("delete from Treatment").executeUpdate();
+		//em.createQuery("delete from DrugTreatment").executeUpdate();
+		//em.createQuery("delete from RadiologyTreatment").executeUpdate();
+		//em.createQuery("delete from SurgeryTreatment").executeUpdate();		
 		//em.flush();
 	}
 	

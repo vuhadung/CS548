@@ -17,6 +17,6 @@
         </dependent-module>
         <property name="context-root" value="ClinicRestWebService"/>
         <property name="java-output-path" value="/ClinicRestWebService/build/classes"/>
-        <property name="component.inclusion.patterns" value="META-INF/**,**/Clinic*.jar,**/Clinic*.war"/>
+        <property name="component.inclusion.patterns" value="META-INF/**,WEB-INF/**"/>
     </wb-module>
 </project-modules>

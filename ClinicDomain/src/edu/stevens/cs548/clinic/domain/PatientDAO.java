@@ -76,7 +76,7 @@ public class PatientDAO implements IPatientDAO {
 	public void deletePatients() {
 		// Query update = em.createQuery("RemoveAllPatients");
 		// update.executeUpdate();
-		em.createQuery("delete from Patient").executeUpdate();
+		em.createQuery("delete from Patient p").executeUpdate();
 	}
 
 }

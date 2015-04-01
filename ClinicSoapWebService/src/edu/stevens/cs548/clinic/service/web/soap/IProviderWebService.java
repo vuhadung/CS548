@@ -22,12 +22,14 @@ import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
 public interface IProviderWebService {
 
 	@WebMethod(operationName = "addProvider")
-	public long addProvider(ProviderDto dto) throws ProviderServiceExn;
+	public long addProvider(@WebParam(name="provider-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto") ProviderDto dto) throws ProviderServiceExn;
 
 	@WebMethod(operationName = "getProvider")
+	@WebResult(name="provider-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto")
 	public ProviderDto getProvider(long id) throws ProviderServiceExn;
 
 	@WebMethod(operationName = "getProviderByNpi")
+	@WebResult(name="provider-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto")
 	public ProviderDto getProviderByNpi(long npi) throws ProviderServiceExn;
 
 	@WebMethod(operationName = "providerAddTreatment")

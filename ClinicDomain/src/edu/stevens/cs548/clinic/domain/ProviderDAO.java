@@ -63,7 +63,7 @@ public class ProviderDAO implements IProviderDAO {
 	public void deleteProviders() {
 		//Query update = em.createQuery("RemoveAllProviders");
 		//update.executeUpdate();
-		em.createQuery("delete from Provider").executeUpdate();
+		em.createQuery("delete from Provider p").executeUpdate();
 	}
 
 	@Override

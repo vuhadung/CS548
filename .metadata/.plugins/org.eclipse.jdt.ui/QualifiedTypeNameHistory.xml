@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
-<fullyQualifiedTypeName name="java.io.Console"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
-<fullyQualifiedTypeName name="javax.persistence.Persistence"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityTransaction"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.RadiologyTreatment_"/>
@@ -42,7 +38,6 @@
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentNotFoundExn"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn"/>
 <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain"/>
 <fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.TreatmentFactory"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.web.rest.data.PatientType"/>
@@ -59,5 +54,10 @@
 <fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
 <fullyQualifiedTypeName name="javax.enterprise.context.RequestScoped"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.dto.util.TreatmentDtoFactory"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
 <fullyQualifiedTypeName name="javax.inject.Inject"/>
+<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain"/>
+<fullyQualifiedTypeName name="javax.inject.Named"/>
+<fullyQualifiedTypeName name="javax.enterprise.context.SessionScoped"/>
+<fullyQualifiedTypeName name="com.sun.xml.ws.spi.ProviderImpl"/>
 </qualifiedTypeNameHistroy>

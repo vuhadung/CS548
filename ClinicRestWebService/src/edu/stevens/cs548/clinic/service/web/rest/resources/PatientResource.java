@@ -14,6 +14,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
@@ -48,8 +49,8 @@ public class PatientResource {
 	@Inject IPatientServiceLocal patientService;
     
     @GET
-    @Path("site")
-    @Produces("text/plain")
+    @Path("/site")
+    @Produces(MediaType.TEXT_PLAIN)
     public String getSiteInfo() {
     	return patientService.siteInfo();
     }

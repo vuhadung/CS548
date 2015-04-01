@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import javax.annotation.*;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.*;
 
 import edu.stevens.cs548.clinic.domain.IPatientDAO.PatientExn;
@@ -13,6 +14,7 @@ import edu.stevens.cs548.clinic.domain.*;
 import edu.stevens.cs548.clinic.domain.ITreatmentDAO.TreatmentExn;
 import edu.stevens.cs548.clinic.service.dto.*;
 import edu.stevens.cs548.clinic.service.dto.util.*;
+import edu.stevens.cs548.clinic.service.ejb.ClinicDomain;
 
 /**
  * Session Bean implementation class PatientService
@@ -38,6 +40,7 @@ public class PatientService implements IPatientServiceLocal,
 	}
 
 	@PersistenceContext(unitName = "ClinicDomain")
+	//@Inject @ClinicDomain
 	EntityManager em;
 
 	@PostConstruct
@@ -137,7 +140,7 @@ public class PatientService implements IPatientServiceLocal,
 			throws PatientNotFoundExn, TreatmentNotFoundExn, PatientServiceExn {
 		// Export treatment DTO from patient aggregate
 		try {
-			Patient patient = patientDAO.getPatient(id);
+			Patient patient = patientDAO.getPatientByPatientId(id);
 			TreatmentDtoExporter visitor = new TreatmentDtoExporter();
 			return patient.exportTreatment(tid, visitor);
 		} catch (PatientExn e) {

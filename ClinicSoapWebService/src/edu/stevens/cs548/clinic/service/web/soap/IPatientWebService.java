@@ -18,15 +18,18 @@ import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn
 public interface IPatientWebService {
 
 	@WebMethod(operationName = "addPatient")
-	public long addPatient(PatientDto dto) throws PatientServiceExn;
+	public long addPatient(@WebParam(name="patient-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto") PatientDto dto) throws PatientServiceExn;
 
 	@WebMethod(operationName = "getPatient")
+	@WebResult(name="patient-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto")
 	public PatientDto getPatient(long id) throws PatientServiceExn;
 
 	@WebMethod(operationName = "getPatientByPatientId")
+	@WebResult(name="patient-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto")
 	public PatientDto getPatientByPatId(long pid) throws PatientServiceExn;
 
 	@WebMethod(operationName = "patientGetTreatment")
+	@WebResult(name="treatment-dto", targetNamespace="http://cs548.stevens.edu/clinic/dto")
 	public TreatmentDto getTreatment(long id, long tid)
 			throws PatientNotFoundExn, TreatmentNotFoundExn, PatientServiceExn;
 

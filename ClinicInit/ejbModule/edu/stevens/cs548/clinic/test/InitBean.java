@@ -32,7 +32,8 @@ import edu.stevens.cs548.clinic.domain.TreatmentDAO;
 import edu.stevens.cs548.clinic.domain.TreatmentFactory;
 import edu.stevens.cs548.clinic.service.dto.*;
 import edu.stevens.cs548.clinic.service.dto.util.*;
-import edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain;
+//import edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain;
+import edu.stevens.cs548.clinic.service.ejb.ClinicDomain;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
 import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn;
@@ -100,7 +101,7 @@ public class InitBean {
 
 		patientDAO.deletePatients();
 		providerDAO.deleteProviders();
-		treatmentDAO.deleteTreatments();
+		//treatmentDAO.deleteTreatments();
 
 		// Add patient
 		// Patient john = patientFactory.createPatient(123, "John",
@@ -108,7 +109,7 @@ public class InitBean {
 		PatientDto johnDto = patientDtoFactory.createPatientDto(123, "John",
 				calendar.getTime(), 30);
 		try {
-			servicePatient.addPatient(johnDto);
+			johnDto.setId(servicePatient.addPatient(johnDto));
 		} catch (PatientServiceExn e1) {
 			e1.printStackTrace();
 		}
@@ -121,7 +122,7 @@ public class InitBean {
 		PatientDto caoDto = patientDtoFactory.createPatientDto(357, "Cao",
 				calendar.getTime(), 31);
 		try {
-			servicePatient.addPatient(caoDto);
+			caoDto.setId(servicePatient.addPatient(caoDto));
 		} catch (PatientServiceExn e1) {
 			e1.printStackTrace();
 		}
@@ -184,15 +185,17 @@ public class InitBean {
 		TreatmentDto drugtrmtDto = treatmentDtoFactory
 				.createDrugTreatmentDto(drugtrmt);
 		try {
-			serviceProvider.addTreatment(johnDto.getId(),
+			serviceProvider.addTreatment(johnDto.getPatientId(),
 					tranDto.getNpi(), drugtrmtDto);
+			logger.info("Added new drug treatment successfully");
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		} catch (PatientServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		}
-		logger.info("Added new drug treatment successfully");
-
+		
 		List<Date> dates = new ArrayList<Date>();
 		calendar.set(2013, 1, 1);
 		dates.add(calendar.getTime());
@@ -203,14 +206,16 @@ public class InitBean {
 		TreatmentDto radiologytrmtDto = treatmentDtoFactory
 				.createRadiologyDto(radiologytrmt);
 		try {
-			serviceProvider.addTreatment(caoDto.getId(),
+			serviceProvider.addTreatment(caoDto.getPatientId(),
 					nguyenDto.getNpi(), radiologytrmtDto);
+			logger.info("Added new radiology treatment successfully");
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		} catch (PatientServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		}
-		logger.info("Added new radiology treatment successfully");
 
 		calendar.set(2012, 1, 1);
 		SurgeryTreatment surgerytrmt = treatmentFactory.createSurgery(
@@ -218,14 +223,16 @@ public class InitBean {
 		TreatmentDto surgerytrmtDto = treatmentDtoFactory
 				.createSurgeryDto(surgerytrmt);
 		try {
-			serviceProvider.addTreatment(johnDto.getId(),
+			serviceProvider.addTreatment(johnDto.getPatientId(),
 					tranDto.getNpi(), surgerytrmtDto);
+			logger.info("Added new surgery treatment successfully");
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		} catch (PatientServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		}
-		logger.info("Added new surgery treatment successfully");
 
 		// Get treatment
 		try {
@@ -234,10 +241,13 @@ public class InitBean {
 					+ trmt1.getId());
 		} catch (PatientNotFoundExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		} catch (TreatmentNotFoundExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		} catch (PatientServiceExn e1) {
 			e1.printStackTrace();
+			logger.info(e1.getMessage());
 		}
 
 		// End Local Test

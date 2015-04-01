@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<schema targetNamespace="http://cs548.stevens.edu/clinic/dto/"
+<schema targetNamespace="http://cs548.stevens.edu/clinic/dto"
 	elementFormDefault="unqualified" jaxb:version="2.0"
 	attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema"
-	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns="http://cs548.stevens.edu/clinic/dto/">
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:tns="http://cs548.stevens.edu/clinic/dto">
 
 	<!-- <annotation>
 		<appinfo>
