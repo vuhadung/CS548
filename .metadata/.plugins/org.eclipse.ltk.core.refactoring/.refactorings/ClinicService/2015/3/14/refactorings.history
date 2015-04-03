@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ClinicService/ejbModule/META-INF/sun-ejb-jar.xml&apos; to &apos;glassfish-ejb-jar.xml&apos;" description="Rename resource &apos;sun-ejb-jar.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ejbModule/META-INF/sun-ejb-jar.xml" name="glassfish-ejb-jar.xml" stamp="1427813364480" updateReferences="true"/>
+</session>

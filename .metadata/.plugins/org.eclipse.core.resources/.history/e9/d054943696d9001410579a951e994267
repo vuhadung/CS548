@@ -1,0 +1,262 @@
+package edu.stevens.cs548.clinic.test;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Logger;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import edu.stevens.cs548.clinic.domain.DrugTreatment;
+import edu.stevens.cs548.clinic.domain.IPatientDAO;
+import edu.stevens.cs548.clinic.domain.IProviderDAO;
+import edu.stevens.cs548.clinic.domain.IProviderDAO.ProviderExn;
+import edu.stevens.cs548.clinic.domain.ITreatmentDAO;
+import edu.stevens.cs548.clinic.domain.Patient;
+import edu.stevens.cs548.clinic.domain.PatientDAO;
+import edu.stevens.cs548.clinic.domain.PatientFactory;
+import edu.stevens.cs548.clinic.domain.Provider;
+import edu.stevens.cs548.clinic.domain.ProviderDAO;
+import edu.stevens.cs548.clinic.domain.ProviderFactory;
+import edu.stevens.cs548.clinic.domain.RadiologyTreatment;
+import edu.stevens.cs548.clinic.domain.SurgeryTreatment;
+import edu.stevens.cs548.clinic.domain.TreatmentDAO;
+import edu.stevens.cs548.clinic.domain.TreatmentFactory;
+import edu.stevens.cs548.clinic.service.dto.*;
+import edu.stevens.cs548.clinic.service.dto.util.*;
+//import edu.stevens.cs548.clinic.service.ejb.ClinicDomainProducer.ClinicDomain;
+import edu.stevens.cs548.clinic.service.ejb.ClinicDomain;
+import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientNotFoundExn;
+import edu.stevens.cs548.clinic.service.ejb.IPatientService.PatientServiceExn;
+import edu.stevens.cs548.clinic.service.ejb.IPatientService.TreatmentNotFoundExn;
+import edu.stevens.cs548.clinic.service.ejb.IPatientServiceLocal;
+import edu.stevens.cs548.clinic.service.ejb.IProviderService.ProviderServiceExn;
+import edu.stevens.cs548.clinic.service.ejb.IProviderServiceLocal;
+
+/**
+ * Session Bean implementation class TestBean
+ */
+@Singleton
+@LocalBean
+@Startup
+public class InitBean {
+
+	private static Logger logger = Logger.getLogger(InitBean.class
+			.getCanonicalName());
+
+	public InitBean() {
+	}
+
+	//@PersistenceContext(unitName = "ClinicDomain")
+	@Inject @ClinicDomain
+	EntityManager em;
+
+	@Inject IPatientServiceLocal servicePatient;
+	@Inject IProviderServiceLocal serviceProvider;
+
+	@PostConstruct
+	private void init() {
+
+		// Start Local Test
+		/*
+		 * EntityManagerFactory emf = Persistence
+		 * .createEntityManagerFactory("ClinicDomain"); EntityManager em =
+		 * emf.createEntityManager(); EntityTransaction et =
+		 * em.getTransaction(); et.begin();
+		 */
+		//
+
+		logger.info("Student's name: Ha-Dung Vu");
+
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(1984, 9, 4);
+
+		// TreatmentExporter visitor = new TreatmentExporter();
+
+		/*
+		 * Clear the database and populate with fresh data.
+		 * 
+		 * If we ensure that deletion of patients cascades deletes of
+		 * treatments, then we only need to delete patients.
+		 */
+		IPatientDAO patientDAO = new PatientDAO(em);
+		ITreatmentDAO treatmentDAO = new TreatmentDAO(em);
+		IProviderDAO providerDAO = new ProviderDAO(em);
+
+		//PatientFactory patientFactory = new PatientFactory();
+		//ProviderFactory providerFactory = new ProviderFactory();
+		TreatmentFactory treatmentFactory = new TreatmentFactory();
+
+		PatientDtoFactory patientDtoFactory = new PatientDtoFactory();
+		ProviderDtoFactory providerDtoFactory = new ProviderDtoFactory();
+		TreatmentDtoFactory treatmentDtoFactory = new TreatmentDtoFactory();
+
+		patientDAO.deletePatients();
+		providerDAO.deleteProviders();
+		//treatmentDAO.deleteTreatments();
+
+		// Add patient
+		// Patient john = patientFactory.createPatient(123, "John",
+		// calendar.getTime(), 30);
+		PatientDto johnDto = patientDtoFactory.createPatientDto(123, "John",
+				calendar.getTime(), 30);
+		try {
+			johnDto.setId(servicePatient.addPatient(johnDto));
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+		}
+		logger.info("Added " + johnDto.getName() + " with patient-id "
+				+ johnDto.getPatientId());
+
+		calendar.set(1983, 12, 1);
+		//Patient cao = patientFactory.createPatient(357, "Cao",
+		//		calendar.getTime(), 31);
+		PatientDto caoDto = patientDtoFactory.createPatientDto(357, "Cao",
+				calendar.getTime(), 31);
+		try {
+			caoDto.setId(servicePatient.addPatient(caoDto));
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+		}
+		logger.info("Added " + caoDto.getName() + " with patient-id " + caoDto.getPatientId());
+
+		// Get patient
+		try {
+			servicePatient.getPatient(1);
+			logger.info("Get patient successfully with id = 1");
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+		}
+
+		try {
+			servicePatient.getPatientByPatId(999);
+			logger.info("Get patient successfully with id = 999");
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+		}
+
+		// Add provider
+		//Provider tran = providerFactory.createProvider(110, "Tran");
+		ProviderDto tranDto = providerDtoFactory.createProviderDto(110, "Tran");
+		try {
+			tranDto.setId(serviceProvider.addProvider(tranDto));
+		} catch (ProviderServiceExn e1) {
+			e1.printStackTrace();
+		}
+		logger.info("Added " + tranDto.getName() + " with npi "
+				+ tranDto.getNpi());
+
+		//Provider nguyen = providerFactory.createProvider(111, "Nguyen");
+		ProviderDto nguyenDto = providerDtoFactory.createProviderDto(111, "Nguyen");
+		try {
+			serviceProvider.addProvider(nguyenDto);
+		} catch (ProviderServiceExn e1) {
+			e1.printStackTrace();
+		}
+		logger.info("Added " + nguyenDto.getName() + " with npi "
+				+ nguyenDto.getNpi());
+
+		// Get provider
+		try {
+			serviceProvider.getProvider(3);
+			logger.info("Get provider successfully with provider-id = 3");
+		} catch (ProviderServiceExn e1) {
+			//logger.info("DUNGVH: Exn 2");			
+			e1.printStackTrace();
+		}
+		try {
+			serviceProvider.getProviderByNpi(111);
+			logger.info("Get provider successfully with npi = 111");
+		} catch (ProviderServiceExn e1) {
+			e1.printStackTrace();
+		}
+
+		// Add treatment
+		DrugTreatment drugtrmt = treatmentFactory.createDrugTreatment(
+				"Drug treatment", "Panadol", 3.8f);
+		TreatmentDto drugtrmtDto = treatmentDtoFactory
+				.createDrugTreatmentDto(drugtrmt);
+		try {
+			serviceProvider.addTreatment(johnDto.getPatientId(),
+					tranDto.getNpi(), drugtrmtDto);
+			logger.info("Added new drug treatment successfully");
+		} catch (ProviderServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		}
+		
+		List<Date> dates = new ArrayList<Date>();
+		calendar.set(2013, 1, 1);
+		dates.add(calendar.getTime());
+		calendar.set(2014, 1, 1);
+		dates.add(calendar.getTime());
+		RadiologyTreatment radiologytrmt = treatmentFactory.createRadiology(
+				"Radiology treatment", dates);
+		TreatmentDto radiologytrmtDto = treatmentDtoFactory
+				.createRadiologyDto(radiologytrmt);
+		try {
+			serviceProvider.addTreatment(caoDto.getPatientId(),
+					nguyenDto.getNpi(), radiologytrmtDto);
+			logger.info("Added new radiology treatment successfully");
+		} catch (ProviderServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		}
+
+		calendar.set(2012, 1, 1);
+		SurgeryTreatment surgerytrmt = treatmentFactory.createSurgery(
+				"Surgery treatment", calendar.getTime());
+		TreatmentDto surgerytrmtDto = treatmentDtoFactory
+				.createSurgeryDto(surgerytrmt);
+		try {
+			serviceProvider.addTreatment(johnDto.getPatientId(),
+					tranDto.getNpi(), surgerytrmtDto);
+			logger.info("Added new surgery treatment successfully");
+		} catch (ProviderServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		}
+
+		// Get treatment
+		try {
+			TreatmentDto trmt1 = servicePatient.getTreatment(1, 5);
+			logger.info("Get treatment successfully with tid = "
+					+ trmt1.getId());
+		} catch (PatientNotFoundExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		} catch (TreatmentNotFoundExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		} catch (PatientServiceExn e1) {
+			e1.printStackTrace();
+			logger.info(e1.getMessage());
+		}
+
+		// End Local Test
+		// et.commit();
+
+	}
+	/*
+	 * public static void main(String[] args) { System.out.println("Debug");
+	 * InitBean test = new InitBean(); test.init(); }
+	 */
+
+}

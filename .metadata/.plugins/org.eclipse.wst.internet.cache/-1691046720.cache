@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://cs548.stevens.edu/clinic/service/web/soap/patient" xmlns:ns2="http://cs548.stevens.edu/clinic/service/web/soap/provider" xmlns:ns1="http://cs548.stevens.edu/clinic/dto" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cs548.stevens.edu/clinic/service/web/soap/patient">
+
+<xs:import namespace="http://cs548.stevens.edu/clinic/dto" schemaLocation="http://ec2-52-11-196-33.us-west-2.compute.amazonaws.com:8080/ClinicSoapWebService/PatientWebService?xsd=3"/>
+
+<xs:import namespace="http://cs548.stevens.edu/clinic/service/web/soap/provider" schemaLocation="http://ec2-52-11-196-33.us-west-2.compute.amazonaws.com:8080/ClinicSoapWebService/PatientWebService?xsd=1"/>
+
+<xs:element name="PatientNotFoundExn" type="tns:PatientNotFoundExn"/>
+
+<xs:element name="PatientServiceExn" nillable="true" type="ns2:PatientServiceExn"/>
+
+<xs:element name="TreatmentNotFoundExn" type="tns:TreatmentNotFoundExn"/>
+
+<xs:element name="addPatient" type="tns:addPatient"/>
+
+<xs:element name="addPatientResponse" type="tns:addPatientResponse"/>
+
+<xs:element name="getPatient" type="tns:getPatient"/>
+
+<xs:element name="getPatientByPatientId" type="tns:getPatientByPatientId"/>
+
+<xs:element name="getPatientByPatientIdResponse" type="tns:getPatientByPatientIdResponse"/>
+
+<xs:element name="getPatientResponse" type="tns:getPatientResponse"/>
+
+<xs:element name="patientGetTreatment" type="tns:patientGetTreatment"/>
+
+<xs:element name="patientGetTreatmentResponse" type="tns:patientGetTreatmentResponse"/>
+
+<xs:element name="siteInfo" nillable="true" type="ns2:siteInfo"/>
+
+<xs:element name="siteInfoResponse" nillable="true" type="ns2:siteInfoResponse"/>
+
+<xs:complexType name="getPatientByPatientId">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPatientByPatientIdResponse">
+<xs:sequence>
+<xs:element ref="ns1:patient-dto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPatient">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPatientResponse">
+<xs:sequence>
+<xs:element ref="ns1:patient-dto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPatient">
+<xs:sequence>
+<xs:element ref="ns1:patient-dto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addPatientResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="patientGetTreatment">
+<xs:sequence>
+<xs:element name="arg0" type="xs:long"/>
+<xs:element name="arg1" type="xs:long"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="patientGetTreatmentResponse">
+<xs:sequence>
+<xs:element ref="ns1:treatment-dto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PatientNotFoundExn">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TreatmentNotFoundExn">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

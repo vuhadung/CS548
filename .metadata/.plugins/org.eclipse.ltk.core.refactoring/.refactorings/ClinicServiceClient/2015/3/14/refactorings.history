@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;edu.stevens.cs548.clinic.service.ejb.IClinicDomainProducer.java&apos; to &apos;ClinicDomain.java&apos;&#x0D;&#x0A;- Original project: &apos;ClinicServiceClient&apos;&#x0D;&#x0A;- Original element: &apos;edu.stevens.cs548.clinic.service.ejb.IClinicDomainProducer.java&apos;&#x0D;&#x0A;- Renamed element: &apos;edu.stevens.cs548.clinic.service.ejb.ClinicDomain.java&apos;" description="Rename compilation unit &apos;IClinicDomainProducer.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/ejbModule&lt;edu.stevens.cs548.clinic.service.ejb{IClinicDomainProducer.java" name="ClinicDomain.java" references="false" stamp="1427809145053" version="1.0"/>
+</session>

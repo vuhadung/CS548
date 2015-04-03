@@ -1,1 +1,1 @@
-patient getPatientByPatId 357
+patient addPatient David 07/30/1985 234 29

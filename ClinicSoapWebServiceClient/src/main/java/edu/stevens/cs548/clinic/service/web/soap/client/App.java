@@ -10,8 +10,10 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Logger;
@@ -182,7 +184,7 @@ public class App {
 	}
 
 	private long addPatient(String[] args) throws ServiceError {
-		if (args.length != 3) {
+		if (args.length != 4) {
 			error("Usage: patient addPatient name dob patient-id age");
 		}
 
@@ -190,11 +192,11 @@ public class App {
 			// PatientDto dto = factory.createPatientDto();
 			PatientDto dto = new PatientDto();
 			dto.setName(args[0]);
-			Calendar dob = DatatypeConverter.parseDate(args[1]);
+			//Calendar dob = DatatypeConverter.parseDate(args[1]);
+			Date date = new SimpleDateFormat("MM/dd/yyyy").parse(args[1]);
 			GregorianCalendar gcal = new GregorianCalendar();
-			gcal.setTime(dob.getTime());
-			dto.setDob(DatatypeFactory.newInstance().newXMLGregorianCalendar(
-					gcal));
+			gcal.setTime(date);
+			dto.setDob(DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal));
 			dto.setPatientId(Long.parseLong(args[2]));
 			dto.setAge(Integer.parseInt(args[3]));
 
@@ -308,7 +310,7 @@ public class App {
 	}
 
 	private long addProvider(String[] args) throws ServiceError {
-		if (args.length != 1) {
+		if (args.length != 2) {
 			error("Usage: provider addProvider name provider-npi");
 		}
 
@@ -398,7 +400,7 @@ public class App {
 			} else if ("getProvider".equals(cmd)) {
 				displayProvider(getProvider(args));
 				newline();
-			} else if ("getPatientByNpi".equals(cmd)) {
+			} else if ("getProviderByNpi".equals(cmd)) {
 				displayProvider(getProviderByNpi(args));
 				newline();
 			} else if ("addDrugTreatment".equals(cmd)) {
@@ -417,7 +419,7 @@ public class App {
 	/* END */
 
 	private String currentWorkingDir() {
-		return new File(".").getAbsolutePath();
+		return new File("").getAbsolutePath();
 	}
 
 	private App processArgs(String[] args) {

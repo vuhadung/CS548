@@ -140,7 +140,7 @@ public class PatientService implements IPatientServiceLocal,
 			throws PatientNotFoundExn, TreatmentNotFoundExn, PatientServiceExn {
 		// Export treatment DTO from patient aggregate
 		try {
-			Patient patient = patientDAO.getPatientByPatientId(id);
+			Patient patient = patientDAO.getPatient(id);
 			TreatmentDtoExporter visitor = new TreatmentDtoExporter();
 			return patient.exportTreatment(tid, visitor);
 		} catch (PatientExn e) {

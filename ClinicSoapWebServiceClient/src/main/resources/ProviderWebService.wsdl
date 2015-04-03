@@ -4,10 +4,7 @@
 <xsd:import namespace="http://cs548.stevens.edu/clinic/service/web/soap/provider" schemaLocation="http://ec2-52-11-196-33.us-west-2.compute.amazonaws.com:8080/ClinicSoapWebService/ProviderWebService?xsd=1"/>
 </xsd:schema>
 <xsd:schema>
-<xsd:import namespace="http://cs548.stevens.edu/clinic/service/web/soap/patient" schemaLocation="http://ec2-52-11-196-33.us-west-2.compute.amazonaws.com:8080/ClinicSoapWebService/ProviderWebService?xsd=2"/>
-</xsd:schema>
-<xsd:schema>
-<xsd:import namespace="http://cs548.stevens.edu/clinic/dto" schemaLocation="http://ec2-52-11-196-33.us-west-2.compute.amazonaws.com:8080/ClinicSoapWebService/ProviderWebService?xsd=3"/>
+<xsd:import namespace="http://cs548.stevens.edu/clinic/dto" schemaLocation="http://ec2-52-11-196-33.us-west-2.compute.amazonaws.com:8080/ClinicSoapWebService/ProviderWebService?xsd=2"/>
 </xsd:schema>
 </types>
 <message name="addProvider">

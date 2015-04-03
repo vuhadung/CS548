@@ -134,7 +134,7 @@
 									<mainClass>edu.stevens.cs548.clinic.service.web.soap.client.App</mainClass>
 								</transformer>
 							</transformers>
-							<minimizeJar>true</minimizeJar>
+							<minimizeJar>false</minimizeJar>
 						</configuration>
 					</execution>
 				</executions>

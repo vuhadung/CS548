@@ -147,7 +147,7 @@ public class InitBean {
 		//Provider tran = providerFactory.createProvider(110, "Tran");
 		ProviderDto tranDto = providerDtoFactory.createProviderDto(110, "Tran");
 		try {
-			serviceProvider.addProvider(tranDto);
+			tranDto.setProviderId(serviceProvider.addProvider(tranDto));
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
 		}
@@ -157,7 +157,7 @@ public class InitBean {
 		//Provider nguyen = providerFactory.createProvider(111, "Nguyen");
 		ProviderDto nguyenDto = providerDtoFactory.createProviderDto(111, "Nguyen");
 		try {
-			serviceProvider.addProvider(nguyenDto);
+			nguyenDto.setProviderId(serviceProvider.addProvider(nguyenDto));
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
 		}
@@ -185,8 +185,8 @@ public class InitBean {
 		TreatmentDto drugtrmtDto = treatmentDtoFactory
 				.createDrugTreatmentDto(drugtrmt);
 		try {
-			serviceProvider.addTreatment(johnDto.getPatientId(),
-					tranDto.getNpi(), drugtrmtDto);
+			serviceProvider.addTreatment(johnDto.getId(),
+					tranDto.getProviderId(), drugtrmtDto);
 			logger.info("Added new drug treatment successfully");
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
@@ -206,8 +206,8 @@ public class InitBean {
 		TreatmentDto radiologytrmtDto = treatmentDtoFactory
 				.createRadiologyDto(radiologytrmt);
 		try {
-			serviceProvider.addTreatment(caoDto.getPatientId(),
-					nguyenDto.getNpi(), radiologytrmtDto);
+			serviceProvider.addTreatment(caoDto.getId(),
+					nguyenDto.getProviderId(), radiologytrmtDto);
 			logger.info("Added new radiology treatment successfully");
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
@@ -223,8 +223,8 @@ public class InitBean {
 		TreatmentDto surgerytrmtDto = treatmentDtoFactory
 				.createSurgeryDto(surgerytrmt);
 		try {
-			serviceProvider.addTreatment(johnDto.getPatientId(),
-					tranDto.getNpi(), surgerytrmtDto);
+			serviceProvider.addTreatment(johnDto.getId(),
+					tranDto.getProviderId(), surgerytrmtDto);
 			logger.info("Added new surgery treatment successfully");
 		} catch (ProviderServiceExn e1) {
 			e1.printStackTrace();
