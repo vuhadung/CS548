@@ -39,13 +39,12 @@
 	<section name="ShowViewDialog">
 		<item value="280" key="DIALOG_WIDTH"/>
 		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
-		<item value="com.eviware.soapui.views.NavigatorView" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="org.eclipse.datatools.connectivity.DataSourceExplorerNavigator" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
 		<item value="414" key="DIALOG_HEIGHT"/>
 		<item value="547" key="DIALOG_X_ORIGIN"/>
 		<item value="90" key="DIALOG_Y_ORIGIN"/>
 		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.jpt.jpa.ui"/>
-			<item value="com.eviware.soapui.views"/>
+			<item value="org.eclipse.datatools"/>
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">

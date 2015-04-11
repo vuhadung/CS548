@@ -1,1 +1,10 @@
+patient getPatientByPatId 357
+patient getPatient 1
+patient getTreatment 1 3
 patient addPatient David 07/30/1985 234 29
+patient siteInfo
+provider getProvider 1
+provider getProviderByNpi 110
+provider addProvider Trung 112
+provider siteInfo
+provider addDrugTreatment 1 1 head-ache AAA 4.0

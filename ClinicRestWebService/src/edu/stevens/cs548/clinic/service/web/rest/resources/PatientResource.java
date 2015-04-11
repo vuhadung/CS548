@@ -69,6 +69,7 @@ public class PatientResource {
     		URI url = ub.build(Long.toString(id));
     		return Response.created(url).build();
     	} catch (PatientServiceExn e) {
+    		logger.info("DungVH: addPatient: " + e.toString());
     		throw new WebApplicationException();
     	}
     }
@@ -111,6 +112,7 @@ public class PatientResource {
     		TreatmentType treatmentRep = new TreatmentRepresentation(treatment, uriInfo);
     		return treatmentRep;
     	} catch (PatientServiceExn e) {
+    		logger.info("DungVH: getPatientTreatmenet: " + e.toString());
     		throw new WebApplicationException(403);
     	}
     }

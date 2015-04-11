@@ -15,7 +15,7 @@
 	<classpathentry kind="lib" path="C:/Users/VU HA DUNG/Documents/CS548/postgresql-9.4-1200.jdbc4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/EclipseLink 2.5.2">
 		<attributes>
-			<attribute name="owner.project.facets" value="#system#;jpt.jpa"/>
+			<attribute name="owner.project.facets" value="jpt.jpa;#system#"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="oracle.eclipse.tools.glassfish.lib.system">

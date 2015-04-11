@@ -143,7 +143,8 @@ public class App {
 			DateFormat datefmt = DateFormat.getInstance();
 			print("Radiology{dates=[");
 			for (XMLGregorianCalendar rad : rads) {
-				print(datefmt.format(rad));
+				//print(datefmt.format(rad));
+				print(rad.toGregorianCalendar().getTime().toString());
 				print(",");
 			}
 			print("]}");
@@ -151,7 +152,8 @@ public class App {
 			SurgeryType st = t.getSurgery();
 			print("Surgery{");
 			print("date=");
-			print(DateFormat.getInstance().format(st.getDate()));
+			//print(DateFormat.getInstance().format(st.getDate()));
+			print(st.getDate().toGregorianCalendar().getTime().toString());
 			print("}");
 		}
 		print("}");

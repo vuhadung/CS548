@@ -1,1 +1,11 @@
-5
+Patient(2){name=Cao,birthDate=12/31/83 7:00 PM,patientId=357}
+Patient(1){name=John,birthDate=10/3/84 8:00 PM,patientId=123}
+Treatment(){diagnosis=Surgery treatment,treatment=Surgery{date=Tue Jan 31 19:00:00 EST 2012}}
+4
+Clinic Patient Service by Ha-Dung Vu
+Provider(1){name=Tran,providerNpi=110}
+Provider(1){name=Tran,providerNpi=110}
+4
+Clinic Provider Service by Ha-Dung Vu
+Adding a drug treatment successfully.
+

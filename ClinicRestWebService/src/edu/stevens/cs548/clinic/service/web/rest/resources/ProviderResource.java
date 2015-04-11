@@ -75,6 +75,7 @@ public class ProviderResource {
 			URI url = ub.build(Long.toString(id));
 			return Response.created(url).build();
 		} catch (ProviderServiceExn e) {
+			logger.info("DungVH: addProvider: " + e.toString());
 			throw new WebApplicationException();
 		}
 	}
@@ -131,6 +132,7 @@ public class ProviderResource {
 					providerService.addTreatment(patientKey, providerKey,
 							treatmentDto);
 				} catch (PatientServiceExn e) {
+					logger.info("DungVH: addTreatment: " + e.toString());
 					throw new WebApplicationException(400);
 				}
 
@@ -139,11 +141,11 @@ public class ProviderResource {
 				//return Response.created(url).build();
 				return Response.ok().build();
 			}
-
 			else
 				throw new WebApplicationException(400);
 
 		} catch (ProviderServiceExn e) {
+			logger.info("DungVH: addTreatment: " + e.toString());
 			throw new WebApplicationException(400);
 		}
 	}
