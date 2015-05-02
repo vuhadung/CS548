@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.RadiologyTreatment_"/>
 <fullyQualifiedTypeName name="org.eclipse.persistence.annotations.PrivateOwned"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.IProviderDAO.ProviderExn"/>
 <fullyQualifiedTypeName name="edu.stevens.cs548.clinic.domain.IPatientDAO.PatientExn"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.sun.xml.ws.spi.ProviderImpl"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.net.InetSocketAddress"/>
+<fullyQualifiedTypeName name="javax.net.ssl.SSLSocketFactory"/>
 </qualifiedTypeNameHistroy>
